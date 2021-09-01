@@ -1,7 +1,8 @@
 {
-  "name": "white-board-docs-website",
-  "version": "0.0.0",
   "private": true,
+  "version": "1.0.0",
+  "name": "white-board-docs-website",
+  "description": "基于docusaurus的白板文档",
   "scripts": {
     "docusaurus": "docusaurus",
     "dev": "docusaurus start",
