@@ -1,0 +1,14 @@
+
+graph LR;
+Application[白板课堂应用] --> HybridApplication[IOS和Android的混合逻辑层] --> 监听原生应用的joinCall事件 & 获取课堂信息 & 获取课堂详情
+Application[白板课堂应用] --> SocketApplication[socket.io业务逻辑层] --> 更新课堂信息 & 更新在线时长 & 更新加入时间 & 更新考勤状态 & 更新课堂人员的在线状态 & 重复登录控制
+Application[白板课堂应用] --> YiYouAppliction[亦友白板业务逻辑层] --> 根据时间计算考勤状态 & 考勤状态提醒 & 课件和教学包逻辑
+Application[白板课堂应用] --> PanoApplication[拍乐云第三方SDK层]
+PanoApplication --> useRtcEngine[音视频层]
+useRtcEngine --> startUseWhiteBoard{是否是移动端} --> |是移动端|处理逻辑 --> 监听channelFailover & 监听leaveChannelIndication & 监听userAudioStart & 监听userVideoStart & 监听userVideoStop & 监听userVideoReceived  & 监听userLeave
+PanoApplication --> useWhiteBoard[白板层]
+useWhiteBoard --> 监听userVisionShareStart & 监听whiteboardFailover & 监听messageReceived
+startUseWhiteBoard{是否是移动端} --> |不是移动端|不处理逻辑
+Application[白板课堂应用] --> DebugApplication[扩展的调试层]
+Application[白板课堂应用] --> JoinClass[浏览兼容层]
+Application[白板课堂应用] --> UIViewRender[UI视图层]

@@ -1,0 +1,29 @@
+%%{
+  init: { 
+    'fontSize':'36','theme':'default','topPadding':100,
+    'flowchart': { 'rankSpacing':90 }
+  }
+}%%
+flowchart TD
+  subgraph 微服务node中间层架构
+    basic-node-server[基础node微服务]
+  	white-borde-server[白板主服务]
+  	courseware-server[课件服务器]
+  	video-server[视频服务器]
+  end;
+  
+  subgraph 拍乐云三方服务架构
+  	pano-server[拍乐云服务器] --> pano-webhook-server[webhook转发服务]
+  	pano-webhook-server[webhook转发服务] --> video-server[视频服务器]
+  	pano-webhook-server[webhook转发服务] --> courseware-server[课件服务器]
+  end
+  
+  subgraph 白板渲染架构
+  	h5-render[H5白板渲染跳板] --> view[白板混合视图]
+  	mobile-server-render[移动端渲染服务器] --> view[白板视图]
+
+  	view[白板视图] --> white-borde-server[白板主服务] 
+    view[白板视图] --> pano-server[拍乐云服务器]
+    view[白板视图] --> basic-node-server[基础node微服务]
+  end
+
