@@ -1,1 +1,0 @@
-(self.webpackChunkwhite_board_docs_website=self.webpackChunkwhite_board_docs_website||[]).push([[672],{4912:function(e){"use strict";e.exports=JSON.parse('{"permalink":"/white-board-docs-website/build/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":3,"previousPage":null,"nextPage":null,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

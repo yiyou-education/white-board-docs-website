@@ -1,0 +1,1 @@
+(self.webpackChunkwhite_board_docs_website=self.webpackChunkwhite_board_docs_website||[]).push([[762],{7891:function(s){"use strict";s.exports=JSON.parse('{"allTagsPath":"/white-board-docs-website/blog/tags","slug":"docusaurus","name":"docusaurus","count":3,"permalink":"/white-board-docs-website/blog/tags/docusaurus"}')}}]);
